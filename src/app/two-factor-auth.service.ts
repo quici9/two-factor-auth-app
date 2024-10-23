@@ -11,7 +11,7 @@ export class TwoFactorAuthService {
 
   // Tạo secret ngẫu nhiên sử dụng Web Crypto API và mã hóa base32
   generateSecret(): string {
-    const array = new Uint8Array(10); // Kích thước 10 byte để tạo secret
+    const array = new Uint8Array(16); // Kích thước 10 byte để tạo secret
     window.crypto.getRandomValues(array); // Sử dụng Web Crypto API để tạo giá trị ngẫu nhiên
 
     // Chuyển đổi sang chuỗi base32
