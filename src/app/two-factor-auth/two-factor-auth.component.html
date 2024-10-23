@@ -1,0 +1,11 @@
+<h2>Kích hoạt Xác thực Hai yếu tố (2FA)</h2>
+<div *ngIf="qrCodeUrl">
+  <p>Quét mã QR bằng Google Authenticator:</p>
+  <img [src]="qrCodeUrl" alt="QR Code để quét bằng Google Authenticator">
+</div>
+
+<form (ngSubmit)="verifyToken()">
+  <label>Nhập mã OTP từ Google Authenticator:</label>
+  <input type="text" [(ngModel)]="token" name="token" required>
+  <button type="submit">Xác nhận</button>
+</form>
